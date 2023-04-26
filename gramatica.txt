@@ -1,0 +1,18 @@
+w -> palabras reservadas(Instrucciones) -> 
+[ 
+	-CrearBD
+	-EliminarBD
+	-CrearColeccion
+	-EliminarColeccion
+	-InsertarUnico
+	-ActualizarUnico
+	-EliminarUnico
+	-BuscarTodo
+	-BuscarUnico
+	-nueva
+]
+string(s) ->[a-zA-Z]*
+ID -> 
+num -> [/d]+
+simbolos -> <(,),{,},";",":","=">
+comentarios -> "---"[A-Za-z ]+ "/*[A-Z][/dA-Za-z ]*/"

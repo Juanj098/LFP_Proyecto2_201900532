@@ -16,10 +16,10 @@ reserv = {
     "llaveC"            :"}",
     "DosP"              :":",
     "coma"              :",",
-    "igual"             :"="
+    "igual"             :"=",
+    "dolar"             :"$",
+    "set"               :"set"
 }
 
-reservadas = list(reserv.values())
+list_reservadas = list(reserv.values())
 
-for lexema in reservadas:
-    print(lexema)
