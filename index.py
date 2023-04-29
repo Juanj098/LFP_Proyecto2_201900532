@@ -1,24 +1,22 @@
 from lexico.Lexico import Analizador_L
-from lexico.reservadas import list_reservadas
-
-Json = '''
-    /*
+from lexico.Lexico import instrucciones_
+Json = '''/*
         es un
         comentario de
         varias lineas
     */
     --- es un comentario de una linea
-    CrearBD proyecto = nueva crearBD();
-    EliminarBD elimina = nueva Eliminar();
+    CrearBD proyecto = nueva CrearBD();
+    EliminarBD elimina = nueva EliminarBD();
     CrearColeccion colec = nueva CrearColeccion("NameColeccion");
     EliminarColeccion EliminarColecc = nueva EliminarColeccion("NameColeccion");
     InsertarUnico insertadoc = nueva InsertarUnico("NameColeccion",
             {
-                "nombre":"Obre Literaria",
+                "nombre":"Obra Literaria",
                 "autor":"Jorge Luis"    
             }
     );
-    ActualizarUnico actualizadoc = nueva EliminarUnico("NameColeccion",
+    ActualizarUnico actualizadoc = nueva ActualizarUnico("NameColeccion",
             {
                 "nombre":"obra literaria"
             },
@@ -31,8 +29,10 @@ Json = '''
                 "nombre":"obra literaria"  
             }
         );
-    BuscarTodo todo = nueva BuscarTodo("NameColeccion");
     BuscarUnico todo = nueva BuscarUnico("NameColeccion");
+    BuscarTodo todo = nueva BuscarTodo("NameColeccion");
 '''
-analisis = Analizador_L(Json)
-print(analisis)
+Analizador_L(Json)
+instruccion = instrucciones_()
+print(instruccion)  
+

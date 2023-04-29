@@ -5,7 +5,7 @@ reserv = {
     "EliminarColeccion" :"EliminarColeccion",
     "InsertarUnico"     :"InsertarUnico",
     "ActualizarUnico"   :"ActualizarUnico",
-    "EliminarUnico"     :"ActualizarUnico",
+    "EliminarUnico"     :"EliminarUnico",
     "BuscarTodo"        :"BuscarTodo",
     "BuscarUnico"       :"BuscarUnico",
     "nueva"             :"nueva",
@@ -17,9 +17,13 @@ reserv = {
     "DosP"              :":",
     "coma"              :",",
     "igual"             :"=",
-    "dolar"             :"$",
-    "set"               :"set"
+    "PuCom"             :";",
+    "$set"              :"$set",
+    "oparentesis"       :"(",
+    "cparentesis"       :")"
 }
-
 list_reservadas = list(reserv.values())
+
+list_instrucciones =['CrearBD','EliminarBD','CrearColeccion','EliminarColeccion','InsertarUnico','ActualizarUnico','BuscarUnico','BuscarTodo','EliminarUnico']
+
 

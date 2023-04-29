@@ -16,3 +16,5 @@ ID ->
 num -> [/d]+
 simbolos -> <(,),{,},";",":","=">
 comentarios -> "---"[A-Za-z ]+ "/*[A-Z][/dA-Za-z ]*/"
+
+
