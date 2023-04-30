@@ -6,6 +6,11 @@ class Token:
     def getToken(self):
         return f'tipo ->{self.tipo}, token ->{self.token}'
 
+    def getLex(self):
+        return self.token
+
+    def getTipo(self):
+        return self.tipo
 
 
 class comentario:
@@ -15,3 +20,4 @@ class comentario:
 
     def getComent(self):
         return self.args
+    

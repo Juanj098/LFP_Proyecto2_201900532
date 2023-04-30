@@ -1,5 +1,8 @@
 from lexico.Lexico import Analizador_L
 from lexico.Lexico import instrucciones_
+from sintactico.Sintactico import sintactico
+from sintactico.Sintactico import toks
+
 Json = '''/*
         es un
         comentario de
@@ -31,8 +34,16 @@ Json = '''/*
         );
     BuscarUnico todo = nueva BuscarUnico("NameColeccion");
     BuscarTodo todo = nueva BuscarTodo("NameColeccion");
+    /*
+    otro comentario
+    de mas lineas
+    */    
 '''
-Analizador_L(Json)
-instruccion = instrucciones_()
-print(instruccion)  
 
+# Analizador_L(Json)
+# instruccion = instrucciones_()
+# print(instruccion)  
+
+sintactico(Json)
+t=toks()
+print(t)
