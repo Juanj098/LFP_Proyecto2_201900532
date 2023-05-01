@@ -11,6 +11,9 @@ class Token:
 
     def getTipo(self):
         return self.tipo
+    
+    def mod(self,x):
+        self.token = x
 
 
 class comentario:

@@ -25,8 +25,13 @@ def Analizador_L(cadena):
             if lexema:
                 puntero+=(len(lexema)-1)
                 list_L.append(lexema)
-        elif char == '('or char ==')' or char == '=' or char == '\"' or char =='{' or char == '}' or char == ':' or char == ';' or char ==',': #simbolos
+        elif char == '('or char ==')' or char == '=' or char =='{' or char == '}' or char == '\"'  or char == ':' or char == ';' or char ==',': #simbolos
             list_L.append(char)
+        # elif char == '{':
+        #     lexema = f_string(cadena[puntero:])
+        #     if lexema:
+        #         puntero+=(len(lexema)-1)
+        #         list_L.append(lexema)
         elif char == '-' or char == '*' or char == '/': #comentarios --- /* */
             lexema = F_comentario(cadena[puntero:])
             if lexema:
@@ -47,6 +52,15 @@ def F_lexema(cadena):
     for char in cadena:
         puntero += char
         if char.isalpha()==False and char != '$':
+            return lexema
+        else:
+            lexema+=char
+def f_string(cadena):
+    lexema = ''
+    puntero = ''
+    for char in cadena:
+        puntero+= char
+        if char == '\}':
             return lexema
         else:
             lexema+=char
@@ -105,23 +119,27 @@ def instrucciones():
                 else:
                     reservada = tok
                     return Token('reservada',reservada)
-            elif list_T[len(list_T)-1].getLex() == '/*': 
-                cadena = ''
-                c = list_L.pop(0)
-                c+=' '
-                while len(list_L) > 0 and list_L[0] != '*/':
-                    if  c == '\n':
-                        c+='\\n'
-                        cadena+=c
-                    cadena+=c
-                    c=list_L.pop(0)
+            elif '/*' in list_T: 
+                if list_T[len(list_T)-1].getLex() == '/*': 
+                    cadena = ''
+                    c = list_L.pop(0)
                     c+=' '
-                return Token('coment',cadena)
+                    while len(list_L) > 0 and list_L[0] != '*/':
+                        if  c == '\n':
+                            c+='\\n'
+                            cadena+=c
+                        cadena+=c
+                        c=list_L.pop(0)
+                        c+=' '
+                    return Token('coment',cadena)
+            elif tok.isdigit():
+                return Token('string',str(tok))
             else:    
                 if tok == '\"':
                     string=''
                     s=list_L.pop(0)
                     while s != '\"':
+                        s+=' '
                         string+=s
                         s=list_L.pop(0)
                     return Token('string',string)
@@ -149,5 +167,5 @@ def instrucciones_():
                 list_E.append(cadena)
         else:
             break 
-    # for toks in list_T:
+    # for toks in list_E:
     #     print(toks.getToken())

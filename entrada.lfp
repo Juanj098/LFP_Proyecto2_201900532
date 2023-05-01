@@ -1,0 +1,43 @@
+    CrearBD cali = nueva CrearBD();
+    CrearColeccion colecu = nueva CrearColeccion("Coleccionuno");
+    CrearColeccion colecd = nueva CrearColeccion("Colecciondos");
+    CrearColeccion colect = nueva CrearColeccion("Colecciontres");
+    InsertarUnico uno = nueva InsertarUnico("Coleccion1",
+	    {
+		    "id": 1,
+		    "nombre": "Calificacion",
+		    "anio": 2023,
+		    "curso": "Lenguajes Formales y de Programacion"
+	    }
+    );
+    InsertarUnico dos = nueva InsertarUnico("Coleccion",
+	    {
+		    "id": 1,
+		    "nombre" : "Calificacion 2",
+		    "anio": 2023,
+		    "curso": "Introduccion a la Programacion 2"
+	    }
+    );
+    EliminarColeccion c = nueva EliminarColeccion("Colecciondos");
+
+    ActualizarUnico ac = nueva ActualizarUnico("Coleccionuno",
+	        {
+		        "id" : 1
+	        },
+	        {
+		        $set: {"curso": "Oficialmente estoy en Compi 1"}
+        	}
+    );
+    EliminarUnico el = nueva EliminarUnico("Coleccionuno",
+	        {
+		        "id" : 2
+	        }
+    );
+    BuscarTodo todo = nueva BuscarTodo("Coleccion1");
+
+
+
+
+
+
+
